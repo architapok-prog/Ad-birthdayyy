@@ -1,0 +1,17 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const pages = document.querySelectorAll('.page');
+    let currentPageIndex = 0;
+
+    const navigateToNextPage = () => {
+        pages[currentPageIndex].classList.remove('active');
+        currentPageIndex++;
+        if (currentPageIndex < pages.length) {
+            pages[currentPageIndex].classList.add('active');
+        }
+    };
+
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.addEventListener('click', navigateToNextPage);
+    });
+});
